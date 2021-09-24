@@ -36,6 +36,11 @@ public class Consumer01 {
         params.put("x-dead-letter-exchange", DEAD_EXCHANGE);
         //正常队列设置死信 routing-key 参数 key 是固定值
         params.put("x-dead-letter-routing-key", "list");
+        // 正常队列设置ttl超时时间 10s = 10000ms
+        params.put("x-message-ttl", 10000);
+        // 正常队列设置ttl超时时间
+        // 10s = 10000ms
+        params.put("x-max-length", 6);
 
         //正常队列
         String normalQueue = "normal-queue";

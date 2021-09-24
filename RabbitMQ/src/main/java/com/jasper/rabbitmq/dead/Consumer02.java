@@ -22,7 +22,7 @@ public class Consumer02 {
         //声明队列
         String deadQueue = "dead-queue";
         channel.queueDeclare(deadQueue, false, false, false, null);
-        channel.queueBind(deadQueue, DEAD_EXCHANGE, "lisi");
+        channel.queueBind(deadQueue, DEAD_EXCHANGE, "list");
 
         System.out.println("等待接收死信消息........... ");
         DeliverCallback deliverCallback = (consumerTag, delivery) -> {
